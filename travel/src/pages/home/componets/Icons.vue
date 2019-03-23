@@ -1,6 +1,6 @@
 <template>
 	<div class="icons">
-	<swiper>
+	<swiper :options="swiperOption">
 		<swiper-slide v-for="(page,index) of pages" :key="index">
 		<div class="icon" v-for="item of page" :key="item.id">
 			<div class="icon-img">
@@ -16,55 +16,23 @@
 <script >
 export default{
 	name:'HomeIcons',
+	props:{
+		list:Array
+
+	},
 	data(){
 		return{
-			iconList:[{
-				id:'001',
-				imgUrl: require('./../../../assets/a.png'),
-				desc:'景点门票'
-
-			},{
-				id:'002',
-				imgUrl:require('./../../../assets/b.png'),
-				desc:'滑雪季'
-
-			},{
-				id:'003',
-				imgUrl:require('./../../../assets/c.png'),
-				desc:'泡温泉'
-			},{
-				id:'004',
-				imgUrl:require('./../../../assets/d.png'),
-				desc:'动植物园'
-			},{
-				id:'005',
-				imgUrl:require('./../../../assets/e.png'),
-				desc:'一日游'
-			},{
-				id:'006',
-				imgUrl:require('./../../../assets/f.png'),
-				desc:'必游榜单'
-			},{
-				id:'007',
-				imgUrl:require('./../../../assets/g.png'),
-				desc:'自然风光'
-			},{
-				id:'008',
-				imgUrl:require('./../../../assets/h.png'),
-				desc:'全部'
-			},{
-				id:'009',
-				imgUrl:require('./../../../assets/i.png'),
-				desc:'出国'
+			swiperOption:{
+				autoplay:false
 			}
-			]
+
 
 		}
 	},
     computed: {
 	    pages () {
 	      const pages = []
-	      this.iconList.forEach((item, index) => {
+	      this.list.forEach((item, index) => {
 	        const page = Math.floor(index / 8)
 	        if (!pages[page]) {
 	          pages[page] = []

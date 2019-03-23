@@ -1,8 +1,8 @@
 <template>
 	<div class="wrapper">
-	<swiper :options="swiperOption" >
+	<swiper :options="swiperOption" v-if="showSwiper">
     <!-- slides -->
-    <swiper-slide v-for="item of swiperList" :key="item.id">
+    <swiper-slide v-for="item of list" :key="item.id">
     	<img class="swiper-img" :src="item.imgUrl">
     </swiper-slide>
  
@@ -16,6 +16,16 @@
 <script type="text/javascript">
 export default{
 	name:'HomeSwiper',
+	props:{
+		list:Array
+
+	},
+	computed:{
+		showSwiper(){
+			return this.list.length
+		}
+
+	},
 	data:function(){
 		//因为组件是要共享的，但他们的data是私有的，所以每个组件都要return一个新的data对象
 		return{
@@ -24,16 +34,7 @@ export default{
 				//轮播插件支持循环轮播
 				loop:true
 
-			},
-			swiperList:[{
-				id: '0001',
-				imgUrl: require('./../../../assets/1.jpg')
-
-			},{
-				id: '0002',
-				imgUrl: require('./../../../assets/2.jpg')
-
-			}]
+			}
 
 		}
 
