@@ -82,9 +82,12 @@ export default{
 <style type="text/css" lang="stylus" scoped>
 @import '~styles/varibles.styl'
 @import '~styles/mixins.styl'
-  .icons >>> .swiper-container
-      height:0
-      padding-bottom:50%
+.icons >>> .swiper-container
+  height:0
+  padding-bottom:50%
+.icons
+  margin-top:.1rem
+
   .icon
      position:relative
      width:25%
