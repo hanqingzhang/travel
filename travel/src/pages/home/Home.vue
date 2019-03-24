@@ -37,6 +37,7 @@ export default{
 
 	},
 	methods:{
+		//在methods中经常使用到“this”关键字，该关键字指向Vue组件实例。
 		getHomeInfo(){
 			//axios返回的结果是promise对象
 			axios.get('/api/index.json').then(this.getHomeInfoSucc)
