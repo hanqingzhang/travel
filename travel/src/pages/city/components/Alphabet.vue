@@ -1,14 +1,17 @@
 <template>
 	<div>
-		<ul class="list">
-			<li class="item">A</li>
-			<li class="item">A</li>
+		<ul class="list" >
+			<li class="item" v-for="(item,key) of cities">{{key}}</li>
+			
 		</ul>
 	</div>
 </template>
 <script type="text/javascript">
 	export default{
-		name:'CityAlphabet'
+		name:'CityAlphabet',
+      props:{
+         cities:Object
+      }
 	}
 </script>
 <style type="text/css" lang="stylus" scoped>
@@ -18,7 +21,7 @@
    flex-direction:column
    justify-content:center
    position:absolute
-   top:1.58rem
+   top:8rem
    right:0
    bottom:0
    width: .4rem
