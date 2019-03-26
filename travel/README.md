@@ -1,3 +1,11 @@
+一款基于vue2.5的仿去哪网的旅游APP
+
+使用es6语法，stylus作为css预处理器，开发了首页组件，城市列表组件
+
+技术栈 1）vue-router 2）vuex 3）axios
+
+第三方插件 1）vue-awesome-swiper轮播组件 2）better-scroll滚动组件
+
 # travel
 
 > A Vue.js project
