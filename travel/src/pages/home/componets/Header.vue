@@ -18,16 +18,20 @@
 	</div>
 </template>
 <script >
+import {mapState} from 'vuex'
 export default{
 	name:'HomeHeader',
-  props:{
-    city: String
+  computed:{
+    //vuex中的数据映射到组件的computed计算属性里
+     ...mapState(['city'])
   }
+ 
 }
 	
 </script>
 <style lang="stylus" scoped>
  @import '~styles/varibles.styl'
+ @import '~styles/mixins.styl'
  .header
     display: flex
     background: $bgColor
@@ -53,7 +57,8 @@ export default{
       color:white
       float: right
       text-align: center
-      width: 1.24rem
+      min-width: 1.04rem
+      padding:0 .1rem
       .arrow-icon
         font-size:.24rem
 

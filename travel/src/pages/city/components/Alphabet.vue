@@ -104,7 +104,7 @@
    flex-direction:column
    justify-content:center
    position:absolute
-   top:8rem
+   top:1.58rem
    right:0
    bottom:0
    width: .4rem
