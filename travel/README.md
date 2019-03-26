@@ -2,6 +2,7 @@
 
 使用es6语法，stylus作为css预处理器，开发了首页组件，城市列表组件
 
+<<<<<<< HEAD
 技术栈
 1）vue-router
 2）vuex
@@ -10,6 +11,11 @@
 第三方插件
 1）vue-awesome-swiper轮播组件
 2）better-scroll滚动组件
+=======
+技术栈 1）vue-router 2）vuex 3）axios
+
+第三方插件 1）vue-awesome-swiper轮播组件 2）better-scroll滚动组件
+>>>>>>> fda2520ae10517333b119b9d4ff0be720d4aa09e
 
 # travel
 
