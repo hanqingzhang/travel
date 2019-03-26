@@ -15,6 +15,7 @@ import HomeIcons from './componets/Icons'
 import HomeRecommend from './componets/Recommend'
 import HomeWeekend from './componets/Weekend'
 import axios from 'axios'
+import { mapState } from 'vuex'
 
 export default{
 	name:'Home',
@@ -26,9 +27,12 @@ export default{
 		HomeWeekend
 		
 	},
+	 computed: {
+    ...mapState(['city'])
+  },
 	data(){
 		return{
-			city:'',
+			lastCity:'',
 			swiperList:[],
 			recommendList:[],
 			iconList:[],
@@ -40,7 +44,7 @@ export default{
 		//在methods中经常使用到“this”关键字，该关键字指向Vue组件实例。
 		getHomeInfo(){
 			//axios返回的结果是promise对象
-			axios.get('/api/index.json').then(this.getHomeInfoSucc)
+			axios.get('/api/index.json?city=' + this.city).then(this.getHomeInfoSucc)
 
 		},
 		getHomeInfoSucc(res){
@@ -60,9 +64,16 @@ export default{
 	},
 	mounted(){
 		//在Vue所有的生命周期钩子方法（如created，mounted， updated以及destroyed）里使用this，this指向调用它的Vue实例
+		this.lastCity=this.city
 		this.getHomeInfo();
 
-	}
+	},
+	activated () {
+    if (this.lastCity !== this.city) {
+      this.lastCity = this.city
+      this.getHomeInfo()
+    }
+  }
 }
 	
 </script>
