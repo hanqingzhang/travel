@@ -28,6 +28,7 @@ export default{
 		
 	},
 	 computed: {
+	 	//扩展运算符...mapState,意思是把vuex的state数据映射到计算属性里面,映射后的名字为city,所以上面直接用this.city,就不用写this.$store.state.city这个长串了     
     ...mapState(['city'])
   },
 	data(){
