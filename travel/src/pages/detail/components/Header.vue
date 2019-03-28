@@ -52,6 +52,9 @@ export default{
      window.addEventListener('scroll',this.handleScroll)
 
   },
+  unmounted () {
+    window.removeEventListener('scroll', this.handleScroll)
+  },
   activited(){
     //activated,deactivated这两个生命周期函数一定是要在使用了keep-alive组件后才会有的
     //使用看keep-alive,页面一旦被展示，activited就会被执行
