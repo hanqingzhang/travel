@@ -80,6 +80,7 @@ export default{
       color:#fff
       font-size:.4rem
 .header-fixed
+   z-index:99
    position:fixed
    top:0
    right:0

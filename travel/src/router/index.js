@@ -19,10 +19,14 @@ export default new Router({
       component: City
     },{
       //动态路由
-      path: '/detail',
-      name: 'Detail',
-      component: Detail
+       path: '/detail/:id',
+       name: 'Detail',
+       component: Detail
 
     }
-  ]
+  ],
+   scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  }
+
 })

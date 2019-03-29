@@ -9,7 +9,7 @@
               class="item border-bottom"
               v-for="item of list"
               :key="item.id"
-              :to="'/detail'"
+              :to="'/detail/' + item.id"
             >
               <img class="item-img" :src="item.imgUrl" />
               <div class="item-info">
