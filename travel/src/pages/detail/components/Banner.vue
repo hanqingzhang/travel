@@ -10,19 +10,23 @@
           </div>
     		</div>
     	</div>
+      <fade-animation>
       <common-gallery 
       :imgs="bannerImgs" 
       v-show="showGallery"
       @close="handleGalleryClose"></common-gallery>
+      </fade-animation>
   </div>
 	
 </template>
 <script type="text/javascript">
 import CommonGallery from 'common/gallery/Gallery'
+import FadeAnimation from 'common/Fade/Fade'
 export default{
 	name:'DetailBanner',
   components:{
-    CommonGallery
+    CommonGallery,
+    FadeAnimation
   },
   props:{
     sightName: String,
